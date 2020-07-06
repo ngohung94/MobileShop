@@ -2,17 +2,23 @@ const getListProductMobile = JSON.parse(localStorage.getItem('dataMobile'));
 const getListProductLaptop = JSON.parse(localStorage.getItem('dataLaptop'));
 const gioHang = JSON.parse(localStorage.getItem('gioHang'));
 const allProducts = getListProductMobile.concat(getListProductLaptop);
-function setCart() {
-    const gioHangStorage = [...JSON.parse(localStorage.getItem('gioHang'))];
-    if (gioHangStorage) {
-        document.getElementById('listGio').innerHTML = gioHangStorage.length;
+const gioHangStorage = [...JSON.parse(localStorage.getItem('gioHang'))];
+function setCart(data) {
+    if (data) {
+        document.getElementById('listGio').innerHTML = data.length;
     }
 
 }
-setCart();
+setCart(gioHangStorage);
 
 
 function showProductListCard() {
+  const getListProductMobile = JSON.parse(localStorage.getItem('dataMobile'));
+  const getListProductLaptop = JSON.parse(localStorage.getItem('dataLaptop'));
+  const gioHang = JSON.parse(localStorage.getItem('gioHang'));
+  const allProducts = getListProductMobile.concat(getListProductLaptop);
+  const gioHangStorage = [...JSON.parse(localStorage.getItem('gioHang'))];
+  setCart(gioHangStorage);
     let result;
     const listProductIncart = allProducts.filter(data => gioHang.find(id => data.id === id));
     const listProducts = document.getElementById('list-product');
@@ -34,7 +40,6 @@ function showProductListCard() {
                     <i class="fa fa-trash" aria-hidden="true"></i>
                   </div>
                 </div>`
-                
               })
           }
       }
@@ -43,6 +48,22 @@ function showProductListCard() {
 
 showProductListCard()
 
+function updateCart() {
+  let allCart = document.getElementById('list-product')[0];
+  let itemCart = document.getElementsByClassName("item-gio-hang");
+  let total = 0;
+  for (let i = 0; i < itemCart.length; i++) {
+    let itCart = itemCart[i]
+    let price_item = itCart.getElementsByClassName("price")[0]
+    let quantity_item = itCart.getElementsByClassName("quantity")[0]
+    let price = parseFloat(price_item.innerText)
+    let quantity = quantity_item.value
+    total = total + (price*quantity)
+  }
+  document.getElementsByClassName("cart-total-price")[0].innerText = total + ' ' + '₫'
+}
+updateCart()
+
 function deleteData(name){
   let result = confirm("Want to delete?");
     if (result) {
@@ -50,32 +71,17 @@ function deleteData(name){
       let foundIndex = gioHang.findIndex(function(item){
           return item.name == name;
         });
-      if(foundIndex >= 0){
+      if(foundIndex !== -1){
         gioHang.splice(foundIndex,1)
       }else {
           console.log("not found");
       }
       localStorage.setItem("gioHang",JSON.stringify(gioHang));
-      updateCart()
-    }
+     
+    }~
+    showProductListCard()
 }
 
-function updateCart() {
-    let allCart = document.getElementById('list-product')[0];
-    let itemCart = allCart.getElementsByClassName("item-gio-hang");
-    let total = 0;
-    for (let i = 0; i < itemCart.length; i++) {
-      let itCart = itemCart[i]
-      let price_item = itCart.getElementsByClassName("price")[0]
-      let quantity_item = itCart.getElementsByClassName("quantity")[0]
-      let price = parseFloat(price_item.innerText)
-      let quantity = quantity_item.value
-      total = total + (price*quantity)
-    }
-    document.getElementsByClassName("cart-total-price")[0].innerText = total + 'VNĐ'
-    console.log("ádas")
-}
-updateCart()
 let quantity = document.getElementsByClassName("quantity");
   for (let i = 0; i < quantity.length; i++) {
     let input = quantity[i];
@@ -87,3 +93,39 @@ let quantity = document.getElementsByClassName("quantity");
       updateCart()
     })
   }
+
+
+
+  // Giỏ hàng : gửi thông tin khách hàng
+function onSubmitForm(event) {
+  event.preventDefault();
+  let customerForm = [];
+  let customer = {
+      name: document.getElementById("name").value,
+      phone: document.getElementById("phone").value,
+      address: document.getElementById("address").value,
+      request: document.getElementById("request").value,
+  };
+  customerForm.push(customer);
+  localStorage.setItem("customerForm", JSON.stringify(customerForm));
+  showData();
+}
+
+function showData() {
+  let jsonData = localStorage.getItem("customerForm");
+  let customerForm = JSON.parse(jsonData);
+  let html = `<ul>`;
+  for (let form of customerForm) {
+      html += `
+              <li>
+                  Name : <b>${form.name}</b></br>
+                  Số điện thoại : <b>${form.phone}</b></br>
+                  Địa chỉ  : <b>${form.address}</b></br>
+                  Yêu cầu khác : <b>${form.request}</b></br>
+              </li>
+                  `;
+  }
+  html += `</ul>`;
+  document.getElementById("app").innerHTML = html;
+}
+

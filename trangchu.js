@@ -231,12 +231,8 @@ function dataList(dataBase, idElement) {
     }
     document.getElementById(`${idElement}`).innerHTML = html
 }
-dataList(newData, "mobile")
-dataList(newData1, "laptop")
-
-
-
-
+dataList(newData,"mobile")
+dataList(newData1,"laptop")
 
 
 function addCart(idd) {
@@ -260,54 +256,6 @@ function setCart() {
     if (gioHangStorage) {
         document.getElementById('listGio').innerHTML = gioHangStorage.length;
     }
-
 }
 setCart();
 
-// Giỏ hàng : gửi thông tin khách hàng
-function onSubmitForm(event) {
-    event.preventDefault();
-    let customerForm = [];
-    let customer = {
-        name: document.getElementById("name").value,
-        phone: document.getElementById("phone").value,
-        address: document.getElementById("address").value,
-        request: document.getElementById("request").value,
-    };
-    customerForm.push(customer);
-    localStorage.setItem("customerForm", JSON.stringify(customerForm));
-    showData();
-}
-
-function showData() {
-    let jsonData = localStorage.getItem("customerForm");
-    let customerForm = JSON.parse(jsonData);
-    let html = `<ul>`;
-    for (let form of customerForm) {
-        html += `
-                <li>
-                    Name : <b>${form.name}</b></br>
-                    Số điện thoại : <b>${form.phone}</b></br>
-                    Địa chỉ  : <b>${form.address}</b></br>
-                    Yêu cầu khác : <b>${form.request}</b></br>
-                </li>
-                    `;
-    }
-    html += `</ul>`;
-    document.getElementById("app").innerHTML = html;
-}
-
-// item gio
-
-
-
-// let number = document.getElementById("number");
-// let cong = document.getElementById("cong");
-
-// cong.addEventListener("click",function(){
-//     let result = number.innerText;
-//     result++ ;
-//     number.innerText = result;
-// })
-
-//data-arg1="${data.id}
