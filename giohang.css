@@ -159,7 +159,7 @@
     margin: auto;
     position: relative;
     background-color: white;
-    border: 1px solid #ddd;
+    border: 1px solid rgb(196, 193, 193);
 }
 .mb-head{
     display: block;
@@ -184,7 +184,8 @@
 
 .title-gh{
     display: grid;
-    border: 1px solid rgb(197, 195, 195);
+    border-bottom: 1px solid rgb(196, 193, 193);
+    border-top: 1px solid rgb(196, 193, 193);
     padding: 10px;
     margin: auto;
     max-width: 100%;
@@ -237,8 +238,11 @@ input{
 .cart-total-title {
     font-weight: bold;
     font-size: 20px ;
-    color: black;
+    color: red;
     margin-right: 20px;
+}
+.cart-total-price{
+    color: rgb(255, 38, 0);
 }
 .title-ttkh{
     font-family: Arial, Helvetica, sans-serif;

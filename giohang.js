@@ -24,23 +24,27 @@ function showProductListCard() {
     const listProducts = document.getElementById('list-product');
       if (Array.isArray(listProductIncart)) {
           if (listProductIncart.length > 0) {
-              result = listProductIncart.map(data => {
-                  return `<div class="item-gio-hang">
-                  <div class="img">
-                    <img
-                      src="${data.img}"
-                      alt="${data.name}">
-                  </div>
-                  <p class="name">${data.name}</p>
-                  <div class="price">
-                    ${data.price}
-                  </div>
-                  <input type="number" class="quantity" value="1">
-                  <div class="del" onclick="deleteData()">
-                    <i class="fa fa-trash" aria-hidden="true"></i>
-                  </div>
-                </div>`
-              })
+            for ( let i = 0; i < listProductIncart.length ; i++){
+              if(i !== 0){
+              result += 
+                   `<div class="item-gio-hang">
+                      <div class="img">
+                        <img
+                          src="${listProductIncart[i].img}"
+                          alt="${listProductIncart[i].name}">
+                      </div>
+                      <p class="name">${listProductIncart[i].name}</p>
+                      <div class="price" data-price="${listProductIncart[i].price}">
+                        ${listProductIncart[i].price.toLocaleString('it-IT', {style : 'currency', currency : 'VND'})}
+                      </div>
+                      <input type="number" class="quantity" value="1">
+                      <div class="del" onclick="deleteData()">
+                        <i class="fa fa-trash" aria-hidden="true"></i>
+                      </div>
+                  </div>`
+              }
+            }
+              console.log(result)
           }
       }
     return listProducts.innerHTML = result;
@@ -56,11 +60,10 @@ function updateCart() {
     let itCart = itemCart[i]
     let price_item = itCart.getElementsByClassName("price")[0]
     let quantity_item = itCart.getElementsByClassName("quantity")[0]
-    let price = parseFloat(price_item.innerText)
     let quantity = quantity_item.value
-    total = total + (price*quantity)
+    total += (price_item.dataset.price*quantity)
   }
-  document.getElementsByClassName("cart-total-price")[0].innerText = total + ' ' + '₫'
+  document.getElementsByClassName("cart-total-price")[0].innerText = total.toLocaleString('it-IT', {style : 'currency', currency : 'VND'})
 }
 updateCart()
 
