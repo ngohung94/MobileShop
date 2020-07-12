@@ -23,7 +23,7 @@
     color: white;
 }
 .img-logo{
-    width: 60%;
+    width: 50%;
     height: 100px;
     float: left;
 }
@@ -154,7 +154,7 @@
     color: rgb(255, 255, 255);
 }
 .f-warp{
-    max-width: 1200px;
+    max-width: 1000px;
     width: 100%;
     margin: auto;
     position: relative;
@@ -201,12 +201,15 @@ input{
     margin: auto;
     max-width: 100%;
     margin-top: 10px;
+    
 }
 .item-gio-hang{
+    border-bottom: 1px solid #dddd;
     display: grid;
     text-align: center;
     align-items: center;
     margin-bottom: 20px;
+    margin-top: 20px;
     grid-template-columns: 1fr 2fr 1fr 1fr 1fr ;
 }
 .item-gio-hang .img img {
@@ -253,43 +256,47 @@ input{
     margin-bottom: 25px;
     padding-top: 20px;
     text-align: center;
-    margin-top: 50px;
+    margin-top: 20px;
+    border-top: 1px solid #ddd;
 }
-.ttkh li{
-    display: flex;
-    justify-content: center;
-    margin-bottom: 30px;
 
+.form-ttkh{
+    margin-right: 50px;
+    margin-left: 50px;
 }
-.ttkh li input{
+.form-group{
+    margin-bottom: 10px;
+}
+.form-group label{
+    display: block;
+}
+.form-group input{
     height: 36px;
     padding: 6px 12px;
-    width: 50%;
+    width: 100%;
     font-size: 13px;
     border: solid 1px #ccc;
     border-radius: 2px;
 }
-
-.buy{
+.buys {
     display: flex;
     justify-content: center;
 }
-.buy button strong{
-    display: block;
+.buy{
     text-align: center;
     text-transform: uppercase;
-    line-height: 50px;
+    line-height: 40px;
     font-size: 20px;
+    margin-bottom: 20px;
     font-weight: bold;
-    padding: 0px 20px 0px 20px;
+    padding: 0px 10px 0px 10px;
     background-color: rgba(255, 60, 0, 0.836);
     color: white;
     cursor: pointer;
 }
-.buy button strong:hover{
+.buy:hover{
     background-color: rgb(255, 38, 0);
 }
-
 
 footer{
     padding  : 10px 20px;

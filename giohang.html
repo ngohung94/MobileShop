@@ -23,7 +23,7 @@
         <li class="search">
           <form method="GET">
             <div>
-              <input type="text" name="search" id="myInput" onkeyup="myFunction()" onfocusout="outClick()"
+              <input type="text" name="search" id="myInput" onkeyup="myFunction()"
                 autocomplete="off" placeholder="Nhập tên sản phẩm cần tìm ..." />
               <button class="icon-search" type="submit">
                 <i class="fa fa-search" aria-hidden="true"></i>
@@ -184,7 +184,7 @@
     </ul>
     
 
-    <div class="f-warp">
+  <div class="f-warp">
       <div class="gh-top">
         Giỏ hàng của bạn :
       </div>
@@ -196,47 +196,45 @@
         <div >Xóa</div>
       </div>
       <div class="gio-hang" id="list-product">
-        
       </div>
 
     <div class="cart-total">
       <strong class="cart-total-title">Tổng Cộng:</strong>
       <span class="cart-total-price"></span>
     </div>
-  </div>
-    <div class="f-warp">
-      <form onsubmit="onSubmitForm(event)" id="custumerForm">
+      <div class="ttkh">
         <p class="title-ttkh">Thông tin khách hàng</p>
-        <ul class="ttkh">
-          <li>
-              <input type="text" name="name" id="name" placeholder="Họ và Tên" />
-          </li>
-          <li>
-              <input type="text" name="phone" id="phone" placeholder="Số điện thoại" />
-          </li>
-          <li>
-              <input type="text" name="address" id="address" placeholder="Địa chỉ giao hàng" />
-          </li>
-          <li>
-              <input type="text" name="request" id="request" placeholder="Yêu cầu khác" />
-          </li>
-        </ul>
-        <p class="buy">
-          <button>
-            <strong>Đặt hàng</strong>
-          </button>
-        </p>
-        </br></br>
-      </form>
-    </div>
-    <div class="app"></div>
-    </div>
+        <form class="form-ttkh" onsubmit="onSubmitForm(event)" id="custumerForm">
+          <div class="form-group">
+            <label for="guest-name">Name:</label>
+            <input type="text" id="guest-name" >
+          </div>
+          <div class="form-group">
+              <label for="guest-phone-number">Phone number:</label>
+              <input type="text" id="guest-phone-number" >
+          </div>
+          <div class="form-group">
+              <label for="guest-address">Address:</label>
+              <input type="text" id="guest-address" >
+          </div>
+          <div class="form-group">
+              <label for="request">Other requirement:</label>
+              <input type="text" id="request" >
+          </div>
+          <div class="buys"  >
+            <button class="buy"  >Đặt hàng</button>
+           </div>  
+  
+        </form>
+      </div>
+  </div>
+  
+ 
 
     <footer>
       Copyright by @HungNgo 2020
     </footer>
 
-    <script src="./trangchu.js"></script>
     <script src="./giohang.js"></script>
   </body>
 </show>
