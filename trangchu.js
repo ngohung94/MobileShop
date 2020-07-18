@@ -36,10 +36,6 @@ window.addEventListener('click', function(e){
     }
   }
 })
-function outClick() {
-  
-}
-
 
 
 let dataMobile = [
@@ -49,7 +45,7 @@ let dataMobile = [
         name: "Iphone 11 Pro",
         price: 28000000,
         priceSale: 30490000,
-        id: "product-1"
+        id: "moible-1"
     },
     {
         a: "./ip11.html",
@@ -57,7 +53,7 @@ let dataMobile = [
         name: "Iphone XS",
         price: 25990000,
         priceSale: 30990000,
-        id: "product-2"
+        id: "moible-2"
     },
     {
         a: "./ip11.html",
@@ -65,7 +61,7 @@ let dataMobile = [
         name: "Iphone 8 Plus",
         price: 13990000,
         priceSale: 15490000,
-        id: "product-3"
+        id: "moible-3"
     },
     {
         a: "./ip11.html",
@@ -73,7 +69,7 @@ let dataMobile = [
         name: "Iphone 7",
         price: 7490000,
         priceSale: 8490000,
-        id: "product-4"
+        id: "moible-4"
     },
     {
         a: "./ip11.html",
@@ -81,7 +77,7 @@ let dataMobile = [
         name: "Iphone 6",
         price: 6490000,
         priceSale: 7490000,
-        id: "product-5"
+        id: "moible-5"
     },
     {
         a: "./ip11.html",
@@ -89,7 +85,7 @@ let dataMobile = [
         name: "Samsung S20+",
         price: 25590000,
         priceSale: 28490000,
-        id: "product-6"
+        id: "moible-6"
     },
     {
         a: "./ip11.html",
@@ -97,7 +93,7 @@ let dataMobile = [
         name: "Samsung Note 10",
         price: 21490000,
         priceSale: 22990000,
-        id: "product-7"
+        id: "moible-7"
     },
     {
         a: "./ip11.html",
@@ -105,7 +101,7 @@ let dataMobile = [
         name: "Samsung S10+",
         price: 13990000,
         priceSale: 18990000,
-        id: "product-8"
+        id: "moible-8"
     },
     {
         a: "./ip11.html",
@@ -113,7 +109,7 @@ let dataMobile = [
         name: "Samsung A71",
         price: 9290000,
         priceSale: 10490000,
-        id: "product-9"
+        id: "moible-9"
     },
     {
         a: "./ip11.html",
@@ -121,8 +117,49 @@ let dataMobile = [
         name: "Samsung A21s",
         price: 4390000,
         priceSale: 4690000,
-        id: "product-10"
+        id: "moible-10"
+    },
+    {
+        a: "./ip11.html",
+        img: "https://cdn.tgdd.vn/Products/Images/42/198150/oppo-find-x2-blue-600x600-600x600.jpg",
+        name: "OPPO Find X2",
+        price: 19990000,
+        priceSale: 23990000,
+        id: "mobile-11"
+    },
+    {
+        a: "./ip11.html",
+        img: "https://cdn.tgdd.vn/Products/Images/42/216172/oppo-reno3-pro-den-600x600-200x200.jpg",
+        name: "OPPO Reno3 Pro",
+        price: 11490000,
+        priceSale: 14990000,
+        id: "mobile-12"
+    },
+    {
+        a: "./ip11.html",
+        img: "https://cdn.tgdd.vn/Products/Images/42/209800/TimerThumb/oppo-reno2-f-(23).jpg",
+        name: "OPPO Reno2 F",
+        price: 6990000,
+        priceSale: 8990000,
+        id: "mobile-13"
+    },
+    {
+        a: "./ip11.html",
+        img: "https://cdn.tgdd.vn/Products/Images/42/220654/TimerThumb/oppo-a92-(11).jpg",
+        name: "OPPO A92",
+        price: 6499000,
+        priceSale: 6990000,
+        id: "mobile-14"
+    },
+    {
+        a: "./ip11.html",
+        img: "https://cdn.tgdd.vn/Products/Images/42/202028/oppo-a9-600x600-trang-600x600.jpg",
+        name: "OPPO A9",
+        price: 5490000,
+        priceSale: 6990000,
+        id: "mobile-15"
     }
+    
 ];
 let dataLaptop = [
     {
@@ -131,7 +168,7 @@ let dataLaptop = [
         name: "MacBook Pro 16",
         price: 69990000,
         priceSale: 71990000,
-        id: "product-11"
+        id: "laptop-1"
     },
     {
         a: "./mb.html",
@@ -139,7 +176,7 @@ let dataLaptop = [
         name: "Macbook Pro 15",
         price: 50590000,
         priceSale: 52490000,
-        id: "product-12"
+        id: "laptop-2"
     },
     {
         a: "./mb.html",
@@ -147,7 +184,7 @@ let dataLaptop = [
         name: "Macbook Pro 13",
         price: 31490000,
         priceSale: 34490000,
-        id: "product-13"
+        id: "laptop-3"
     },
     {
         a: "./mb.html",
@@ -155,7 +192,7 @@ let dataLaptop = [
         name: "Macbook Air 13",
         price: 18990000,
         priceSale: 21990000,
-        id: "product-14"
+        id: "laptop-4"
     },
     {
         a: "./mb.html",
@@ -164,7 +201,7 @@ let dataLaptop = [
         price: 21499000,
         priceSale: 24490000,
         priceSale: 28490000,
-        id: "product-15"
+        id: "laptop-5"
     },
     {
         a: "./mb.html",
@@ -172,7 +209,7 @@ let dataLaptop = [
         name: "Dell Inspiron N5391",
         price: 25990000,
         priceSale: 26490000,
-        id: "product-16"
+        id: "laptop-6"
     },
     {
         a: "./mb.html",
@@ -180,7 +217,7 @@ let dataLaptop = [
         name: "Dell Inspiron V3590",
         price: 16990000,
         priceSale: 17490000,
-        id: "product-17"
+        id: "laptop-7"
     },
     {
         a: "./mb.html",
@@ -188,7 +225,7 @@ let dataLaptop = [
         name: "Dell Inspiron N3493",
         price: 15090000,
         priceSale: 15590000,
-        id: "product-18"
+        id: "laptop-8"
     },
     {
         a: "./mb.html",
@@ -196,7 +233,7 @@ let dataLaptop = [
         name: "Dell Inspiron N3481",
         price: 11790000,
         priceSale: 12290000,
-        id: "product-19"
+        id: "laptop-9"
     },
     {
         a: "./mb.html",
@@ -204,7 +241,7 @@ let dataLaptop = [
         name: "Dell Inspiron N3477",
         price: 10590000,
         priceSale: 10990000,
-        id: "product-20"
+        id: "laptop-10"
     },
 ]
 

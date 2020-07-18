@@ -5,6 +5,7 @@
     font-size: 18px;
     font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif,
         "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    line-height: normal;
 }
 .header {
     width: 100%;
@@ -147,15 +148,16 @@
     padding-bottom: 20px;
 }
 .product {
-    margin-top: 20px;
+    margin-top: 0px;
     width: 100%;
     flex-wrap: wrap;
     transition: all 0.3s;
     overflow: hidden;
     display: grid;
-    grid-gap: 20px;
+    grid-gap: 30px;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: repeat(2, 330px);
+    height: 100%;
 }
 .product :hover {
     transform: scale(1.005);
@@ -163,7 +165,8 @@
 }
 
 .mb-form {
-    width: 80%;
+    width: 200px;
+    height: 100%;
     background-color: rgb(255, 255, 255);
     border: 1px solid rgb(248, 82, 82);
     border-radius: 5px;
@@ -177,6 +180,7 @@
 }
 .mb-form p {
     font-size: 20px;
+    word-wrap: break-word;
 }
 .back-to-top {
     display: block;
@@ -269,21 +273,33 @@ footer {
     }
     .hotline span  {
         order: 3;
+        font-size: 15px;
     }
     .gio {
         order: 2;
+        font-size: 15px;
     }
     .product {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         margin: auto;
     }
     .mb-form{
-        width: 70%;
+        width: 200px;
     }
 }
 
 /* Tablet */
-@media (min-width: 768px) and (max-width: 1199.98px) {
+@media (min-width: 768px) and (max-width: 991.99px) {
+    .product {
+        grid-template-columns: 1fr 1fr ;
+        grid-template-rows: repeat(2, 2fr);
+    }
+    .img-logo {
+        width: 80%;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1119.99px) {
     .product {
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: repeat(2, 2fr);
@@ -293,7 +309,7 @@ footer {
     }
 }
 
-@media (min-width: 1200px) and (max-width: 1279.98px) {
+@media (min-width: 1200px) and (max-width: 1439.99px) {
     .product {
         grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-template-rows: repeat(2, 2fr);
