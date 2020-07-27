@@ -111,6 +111,14 @@
     float: right;
     color: #ffffff;
 }
+#listGio{
+    height: 15px;
+    width: 15px;
+    font-size: 10px;
+    color: #ffffff;
+    position: absolute;
+    display: none;
+}
 .content{
     display: flex;
     justify-content: space-around;

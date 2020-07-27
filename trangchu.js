@@ -19,7 +19,7 @@ function myFunction() {
 }
 window.addEventListener('click', function(e){	
 	if (!document.getElementById('search-box').contains(e.target)){
-  	  let input, filter, ul, li, a, i, txtValue;
+    let input, filter, ul, li, a, i, txtValue;
             input = document.getElementById("myInput");
             filter = input.value.toUpperCase();
             ul = document.getElementById("myUL");
@@ -33,8 +33,8 @@ window.addEventListener('click', function(e){
                 } else {
                     li[i].style.display = "none";
                 }
+            }
     }
-  }
 })
 
 
@@ -274,7 +274,6 @@ function dataList(dataBase, idElement) {
         }
         document.getElementById(`${idElement}`).innerHTML = html
     }
-   
 }
 dataList(newData,"mobile")
 dataList(newData1,"laptop")
@@ -286,14 +285,33 @@ const addCart = (idd)=> {
         const gioHangStorage = [...JSON.parse(localStorage.getItem('gioHang'))];
         gioHangStorage.push(idd)
         localStorage.setItem('gioHang', JSON.stringify(gioHangStorage));
-        // document.getElementById('listGio').innerHTML = gioHangStorage.length;
+        document.getElementById('listGio').innerHTML = gioHangStorage.length;
+        if(gioHangStorage.length === 0){
+            document.getElementById('listGio').style.display = "none"
+        }else{
+            document.getElementById('listGio').style.display = "inline-block"
+        }
         alert("Đã thêm vào giỏ hàng")
     }
     else {
         localStorage.setItem('gioHang', JSON.stringify([]))
     }
-
-
 }
 
+const getListProductMobile = JSON.parse(localStorage.getItem('dataMobile'));
+const getListProductLaptop = JSON.parse(localStorage.getItem('dataLaptop'));
+const gioHang = JSON.parse(localStorage.getItem('gioHang'));
+const allProducts = getListProductMobile.concat(getListProductLaptop);
+const gioHangStorage = [...JSON.parse(localStorage.getItem('gioHang'))];
+function setCart(data) {
+    if (data) {
+        document.getElementById('listGio').innerHTML = data.length;
+        if(data.length === 0){
+            document.getElementById('listGio').style.display = "none"
+        }else{
+            document.getElementById('listGio').style.display = "inline-block"
+        }
+    }
 
+}
+setCart(gioHangStorage);

@@ -5,7 +5,12 @@ const allProducts = getListProductMobile.concat(getListProductLaptop);
 const gioHangStorage = [...JSON.parse(localStorage.getItem('gioHang'))];
 function setCart(data) {
     if (data) {
-        // document.getElementById('listGio').innerHTML = data.length;
+        document.getElementById('listGio').innerHTML = data.length;
+        if(data.length === 0){
+          document.getElementById('listGio').style.display = "none"
+        }else{
+          document.getElementById('listGio').style.display = "inline-block"
+        }
     }
 
 }
