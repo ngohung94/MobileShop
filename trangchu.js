@@ -1,5 +1,5 @@
 
-
+// search
 function myFunction() {
     let input, filter, ul, li, a, i, txtValue;
     input = document.getElementById("myInput");
@@ -315,3 +315,61 @@ function setCart(data) {
 
 }
 setCart(gioHangStorage);
+
+function showDataInput (dataBase) {
+  let myUL = document.getElementById("myUL")
+  for (let i = 0 ; i < dataBase.length ; i++){
+    const oneData = document.createElement('li')
+    oneData.innerHTML = 
+    `
+    <a href="./ip11.html">
+                  <p><img width ="40" height="40" src="${dataBase[i].img}"></p>
+                  <div>
+                    <h4>${dataBase[i].name} </h4>
+                    <p>${dataBase[i].price}</p>
+                  </div>
+                </a>
+    `
+    myUL.appendChild(oneData)
+  }
+}
+showDataInput(dataMobile)
+showDataInput(dataLaptop)
+
+// slide 
+const  carouselSlide = document.querySelector('.carousel-slide')
+const  carouselImages = document.querySelectorAll('.carousel-slide img')
+
+const prevBtn = document.getElementById('prevBtn')
+const nextBtn = document.getElementById('nextBtn')
+
+let count = 1 ;
+let size = carouselImages[0].clientWidth;
+
+nextBtn.addEventListener('click',() => {
+    if (count >= carouselImages.length -1 ) return 
+    carouselSlide.style.transition = "transform 1s ease-in-out";
+    count++;
+    carouselSlide.style.transform = 'translateX(' + (-size * count) + 'px)';
+})
+
+prevBtn.addEventListener('click',() => {
+    if (count <= 0 ) return
+    carouselSlide.style.transition = "transform 1s ease-in-out";
+    count--;
+    carouselSlide.style.transform = 'translateX(' + (-size * count) + 'px)';
+})
+
+carouselSlide.addEventListener('transitionend', () => {
+    if (carouselImages[count].id === 'lastClone'){
+        carouselSlide.style.transition = 'none';
+        count = carouselImages.length - 2 ;
+        carouselSlide.style.transform = 'translateX(' + (-size * count) + 'px)';
+    }
+    if (carouselImages[count].id === 'firstClone'){
+        carouselSlide.style.transition = 'none';
+        count = carouselImages.length - count ;
+        carouselSlide.style.transform = 'translateX(' + (-size * count) + 'px)';
+    }
+})
+
