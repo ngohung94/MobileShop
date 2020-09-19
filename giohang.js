@@ -110,15 +110,21 @@ function onSubmitForm(event) {
     };
   if(!cartDetail.querySelector("#guest-name").value){
     error = true ;
-    alert("Vui lòng nhập tên")
+    document.getElementById('guest-name-error').innerText = "Vui lòng nhập tên"
+  }else {
+    document.getElementById('guest-name-error').innerText = ""
   }
   if(!cartDetail.querySelector("#guest-phone-number").value){
     error = true ;
-    alert("Vui lòng nhập số điện thoại")
+    document.getElementById('guest-phone-number-error').innerText = "Vui lòng nhập số điện thoại"
+  }else {
+    document.getElementById('guest-phone-number-error').innerText = ""
   }
   if(!cartDetail.querySelector("#guest-address").value){
     error = true ;
-    alert("Vui lòng nhập địa chỉ")
+    document.getElementById('guest-address-error').innerText = "Vui lòng nhập địa chỉ"
+  }else {
+    document.getElementById('guest-address-error').innerText = ""
   }
 
   if(!error){

@@ -58,22 +58,7 @@
     font-size: 20px;
     word-wrap: break-word;
 }
-.back-to-top {
-    display: block;
-    position: fixed;
-    bottom: 5%;
-    right: 10px;
-    z-index: 9999;
-    width: 40px;
-    height: 40px;
-    text-align: center;
-    line-height: 30px;
-    background: #fff;
-    color: #e70d0d;
-    cursor: pointer;
-    border: 2px #393d3f solid;
-    border-radius: 99px;
-}
+
 
 .carousel {
     cursor: pointer;

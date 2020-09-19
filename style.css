@@ -24,7 +24,7 @@
     color: white;
 }
 .img-logo {
-    width: 100%;
+    width: 70%;
     height: 100px;
     float: left;
 }
@@ -130,7 +130,22 @@ footer {
     text-align: center;
     margin-top: 50px;
 }
-
+.back-to-top {
+    display: block;
+    position: fixed;
+    bottom: 5%;
+    right: 10px;
+    z-index: 9999;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 30px;
+    background: #fff;
+    color: #e70d0d;
+    cursor: pointer;
+    border: 2px #393d3f solid;
+    border-radius: 99px;
+}
 /* Mobile */
 @media all and (max-width: 767px) {
     .header-1 {
@@ -168,7 +183,7 @@ footer {
     }
 }
 
-@media (min-width: 992px) and (max-width: 1119.99px) {
+@media (min-width: 992px) and (max-width: 1199.99px) {
     .product {
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: repeat(2, 2fr);

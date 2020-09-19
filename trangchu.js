@@ -37,6 +37,15 @@ window.addEventListener('click', function(e){
     }
 })
 
+// let searchForm = document.getElementById("searchForm")
+// searchForm.addEventListener ("submit", () => {
+//     const dataSearch = searchForm.search.value
+//     for ( i = 0 ; i < dataMobile.length ; i++){
+//         if (dataSearch == dataMobile[i].name){
+//             alert("ok")
+//         }
+//     }
+// })
 
 let dataMobile = [
     {

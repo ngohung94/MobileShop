@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <show lang="en">
-
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,7 +7,6 @@
     <link rel="stylesheet" href="giohang.css" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" />
-
   </head>
 
   <body>
@@ -100,19 +98,22 @@
         <p class="title-ttkh">Thông tin khách hàng</p>
         <form class="form-ttkh" onsubmit="onSubmitForm(event)" id="custumerForm">
           <div class="form-group">
-            <label for="guest-name">Name:</label>
+            <label for="guest-name">Họ tên:</label>
             <input type="text" id="guest-name" >
+            <div class="error" id="guest-name-error"></div>
           </div>
           <div class="form-group">
-              <label for="guest-phone-number">Phone number:</label>
+              <label for="guest-phone-number">Số điện thoại:</label>
               <input type="text" id="guest-phone-number" >
+              <div class="error" id="guest-phone-number-error"></div>
           </div>
           <div class="form-group">
-              <label for="guest-address">Address:</label>
+              <label for="guest-address">Địa chỉ:</label>
               <input type="text" id="guest-address" >
+              <div class="error" id="guest-address-error"></div>
           </div>
           <div class="form-group">
-              <label for="request">Other requirement:</label>
+              <label for="request">Yêu cầu khác:</label>
               <input type="text" id="request" >
           </div>
           <div class="buys"  >
